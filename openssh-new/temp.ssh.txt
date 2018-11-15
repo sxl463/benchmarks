@@ -1,0 +1,205 @@
+ssh-only-client.ll:1423:define i32 @main(i32 %ac, i8** %av) #0 {
+ssh-only-client.ll:4356:define internal void @usage() #0 {
+ssh-only-client.ll:4385:define internal void @process_config_files(i8* %host_arg, %struct.passwd* %pw, i32 %post_canon) #0 {
+ssh-only-client.ll:4477:define internal %struct.addrinfo* @resolve_canonicalize(i8** %hostp, i32 %port) #0 {
+ssh-only-client.ll:4777:define internal %struct.addrinfo* @resolve_host(i8* %name, i32 %port, i32 %logerr, i8* %cname, i64 %clen) #0 {
+ssh-only-client.ll:4963:define internal i32 @check_follow_cname(i32 %direct, i8** %namep, i8* %cname) #0 {
+ssh-only-client.ll:5103:define internal void @set_addrinfo_port(%struct.addrinfo* %addrs, i32 %port) #0 {
+ssh-only-client.ll:5235:define internal void @load_public_identity_files() #0 {
+ssh-only-client.ll:5782:define internal void @tilde_expand_paths(i8** %paths, i32 %num_paths) #0 {
+ssh-only-client.ll:5835:define internal void @main_sigchld_handler(i32 %sig) #0 {
+ssh-only-client.ll:5906:define internal i32 @ssh_session2() #0 {
+ssh-only-client.ll:6132:define internal i32 @ssh_session() #0 {
+ssh-only-client.ll:6559:define internal void @ssh_init_stdio_forwarding() #0 {
+ssh-only-client.ll:6630:define internal void @ssh_init_forwarding() #0 {
+ssh-only-client.ll:7019:define internal i32 @ssh_session2_open() #0 {
+ssh-only-client.ll:7191:define internal void @fork_postauth() #0 {
+ssh-only-client.ll:7220:define internal void @control_persist_detach() #0 {
+ssh-only-client.ll:7422:define internal void @ssh_session2_setup(i32 %id, i32 %success, i8* %arg) #0 {
+ssh-only-client.ll:7527:define internal void @check_agent_present() #0 {
+ssh-only-client.ll:7584:define internal void @ssh_confirm_remote_forward(i32 %type, i32 %seq, i8* %ctxt) #0 {
+ssh-only-client.ll:7841:define internal void @client_cleanup_stdio_fwd(i32 %id, i8* %arg) #0 {
+ssh-only-client.ll:7856:define internal void @ssh_stdio_confirm(i32 %id, i32 %success, i8* %arg) #0 {
+ssh-only-client.ll:7915:define internal %struct.addrinfo* @resolve_addr(i8* %name, i32 %port, i8* %caddr, i64 %clen) #0 {
+ssh-only-client.ll:8079:define void @add_local_forward(%struct.Options* %options, %struct.Forward* %newfwd) #0 {
+ssh-only-client.ll:8247:define void @add_remote_forward(%struct.Options* %options, %struct.Forward* %newfwd) #0 {
+ssh-only-client.ll:8398:define void @add_certificate_file(%struct.Options* %options, i8* %path, i32 %userprovided) #0 {
+ssh-only-client.ll:8515:define void @add_identity_file(%struct.Options* %options, i8* %dir, i8* %filename, i32 %userprovided) #0 {
+ssh-only-client.ll:8653:define i32 @default_ssh_port() #0 {
+ssh-only-client.ll:8695:define i32 @process_config_line(%struct.Options* %options, %struct.passwd* %pw, i8* %host, i8* %original_host, i8* %line, i8* %filename, i32 %linenum, i32* %activep, i32 %flags) #0 {
+ssh-only-client.ll:8729:define i32 @read_config_file(i8* %filename, %struct.passwd* %pw, i8* %host, i8* %original_host, %struct.Options* %options, i32 %flags) #0 {
+ssh-only-client.ll:8756:define i32 @option_clear_or_none(i8* %o) #0 {
+ssh-only-client.ll:8777:define void @initialize_options(%struct.Options* %options) #0 {
+ssh-only-client.ll:9735:define void @fill_default_options_for_canonicalization(%struct.Options* %options) #0 {
+ssh-only-client.ll:9815:define void @fill_default_options(%struct.Options* %options) #0 {
+ssh-only-client.ll:11516:define i32 @parse_forward(%struct.Forward* %fwd, i8* %fwdspec, i32 %dynamicfwd, i32 %remotefwd) #0 {
+ssh-only-client.ll:12182:define i32 @parse_jump(i8* %s, %struct.Options* %o, i32 %active) #0 {
+ssh-only-client.ll:12384:define void @dump_client_config(%struct.Options* %o, i8* %host) #0 {
+ssh-only-client.ll:13188:define internal i32 @process_config_line_depth(%struct.Options* %options, %struct.passwd* %pw, i8* %host, i8* %original_host, i8* %line, i8* %filename, i32 %linenum, i32* %activep, i32 %flags, i32 %depth) #0 {
+ssh-only-client.ll:16654:define internal i32 @read_config_file_depth(i8* %filename, %struct.passwd* %pw, i8* %host, i8* %original_host, %struct.Options* %options, i32 %flags, i32* %activep, i32 %depth) #0 {
+ssh-only-client.ll:16846:define internal void @clear_forwardings(%struct.Options* %options) #0 {
+ssh-only-client.ll:17034:define internal i32 @parse_fwd_field(i8** %p, %struct.fwdarg* %fwd) #0 {
+ssh-only-client.ll:17296:define internal void @dump_cfg_string(i32 %code, i8* %val) #0 {
+ssh-only-client.ll:17321:define internal void @dump_cfg_int(i32 %code, i32 %val) #0 {
+ssh-only-client.ll:17335:define internal void @dump_cfg_fmtint(i32 %code, i32 %val) #0 {
+ssh-only-client.ll:17351:define internal void @dump_cfg_forwards(i32 %code, i32 %count, %struct.Forward* %fwds) #0 {
+ssh-only-client.ll:17537:define internal void @dump_cfg_strarray(i32 %code, i32 %count, i8** %vals) #0 {
+ssh-only-client.ll:17577:define internal void @dump_cfg_strarray_oneline(i32 %code, i32 %count, i8** %vals) #0 {
+ssh-only-client.ll:17619:define internal i32 @parse_token(i8* %cp, i8* %filename, i32 %linenum, i8* %ignored_unknown) #0 {
+ssh-only-client.ll:17712:define internal i32 @match_cfg_line(%struct.Options* %options, i8** %condition, %struct.passwd* %pw, i8* %host_arg, i8* %original_host, i32 %post_canon, i8* %filename, i32 %linenum) #0 {
+ssh-only-client.ll:18356:define internal void @valid_domain(i8* %name, i8* %filename, i32 %linenum) #0 {
+ssh-only-client.ll:18533:define internal i8* @lookup_opcode_name(i32 %code) #0 {
+ssh-only-client.ll:18589:define internal i8* @fmt_intarg(i32 %code, i32 %val) #0 {
+ssh-only-client.ll:18721:define internal i32 @execute_in_shell(i8* %cmd) #0 {
+ssh-only-client.ll:18982:define internal i8* @fmt_multistate_int(i32 %val, %struct.multistate* %m) #0 {
+ssh-only-client.ll:19043:define i32 @client_x11_get_proto(i8* %display, i8* %xauth_path, i32 %trusted, i32 %timeout, i8** %_proto, i8** %_data) #0 {
+ssh-only-client.ll:19545:define void @client_expect_confirm(i32 %id, i8* %request, i32 %action) #0 {
+ssh-only-client.ll:19575:define void @client_register_global_confirm(void (i32, i32, i8*)* %cb, i8* %ctx) #0 {
+ssh-only-client.ll:19679:define i8* @client_new_escape_filter_ctx(i32 %escape_char) #0 {
+ssh-only-client.ll:19700:define void @client_filter_cleanup(i32 %cid, i8* %ctx) #0 {
+ssh-only-client.ll:19712:define i32 @client_simple_escape_filter(%struct.Channel.80* %c, i8* %buf, i32 %len) #0 {
+ssh-only-client.ll:19751:define i32 @client_loop(i32 %have_pty, i32 %escape_char_arg, i32 %ssh2_chan_id) #0 {
+ssh-only-client.ll:20703:define i32 @client_request_tun_fwd(i32 %tun_mode, i32 %local_tun, i32 %remote_tun) #0 {
+ssh-only-client.ll:20887:define void @client_session2_setup(i32 %id, i32 %want_tty, i32 %want_subsystem, i8* %term, %struct.termios* %tiop, i32 %in_fd, %struct.sshbuf* %cmd, i8** %env) #0 {
+ssh-only-client.ll:21231:define void @client_stop_mux() #0 {
+ssh-only-client.ll:21278:define void @cleanup_exit(i32 %i) #10 {
+ssh-only-client.ll:21477:define internal i32 @client_x11_display_valid(i8* %display) #0 {
+ssh-only-client.ll:21560:define internal void @client_status_confirm(i32 %type, %struct.Channel.80* %c, i8* %ctx) #0 {
+ssh-only-client.ll:21771:define internal void @client_abandon_status_confirm(%struct.Channel.80* %c, i8* %ctx) #0 {
+ssh-only-client.ll:21783:define internal i32 @process_escapes(%struct.Channel.80* %c, %struct.sshbuf* %bin, %struct.sshbuf* %bout, %struct.sshbuf* %berr, i8* %buf, i32 %len) #0 {
+ssh-only-client.ll:22541:define internal double @get_current_time() #0 {
+ssh-only-client.ll:22557:define internal void @client_init_dispatch() #0 {
+ssh-only-client.ll:22588:define internal void @signal_handler(i32 %sig) #0 {
+ssh-only-client.ll:22599:define internal void @window_change_handler(i32 %sig) #0 {
+ssh-only-client.ll:22609:define internal void @client_channel_closed(i32 %id, i8* %arg) #0 {
+ssh-only-client.ll:22626:define internal void @client_check_initial_eof_on_stdin() #0 {
+ssh-only-client.ll:22701:define internal void @client_process_buffered_input_packets() #0 {
+ssh-only-client.ll:22711:define internal void @client_make_packets_from_stdin_data() #0 {
+ssh-only-client.ll:22784:define internal void @client_check_window_change() #0 {
+ssh-only-client.ll:22847:define internal void @client_wait_until_can_do_something(%struct.fd_set** %readsetp, %struct.fd_set** %writesetp, i32* %maxfdp, i32* %nallocp, i32 %rekeying) #0 {
+ssh-only-client.ll:23282:define internal void @client_process_net_input(%struct.fd_set* %readset) #0 {
+ssh-only-client.ll:23374:define internal void @client_process_input(%struct.fd_set* %readset) #0 {
+ssh-only-client.ll:23516:define internal void @client_process_output(%struct.fd_set* %writeset) #0 {
+ssh-only-client.ll:23648:define internal void @leave_non_blocking() #0 {
+ssh-only-client.ll:23666:define internal void @client_suspend_self(%struct.sshbuf* %bin, %struct.sshbuf* %bout, %struct.sshbuf* %berr) #0 {
+ssh-only-client.ll:23739:define internal void @print_escape_help(%struct.sshbuf* %b, i32 %escape_char, i32 %protocol2, i32 %mux_client, i32 %using_stderr) #0 {
+ssh-only-client.ll:23845:define internal void @process_cmdline() #0 {
+ssh-only-client.ll:24228:define internal void @client_init_dispatch_20() #0 {
+ssh-only-client.ll:24266:define internal void @client_init_dispatch_13() #0 {
+ssh-only-client.ll:24302:define internal void @client_init_dispatch_15() #0 {
+ssh-only-client.ll:24313:define internal void @enter_non_blocking() #0 {
+ssh-only-client.ll:24323:define internal void @set_control_persist_exit_time() #0 {
+ssh-only-client.ll:24408:define internal void @server_alive_check() #0 {
+ssh-only-client.ll:24436:define internal i32 @client_input_channel_open(i32 %type, i32 %seq, i8* %ctxt) #0 {
+ssh-only-client.ll:24637:define internal i32 @client_input_channel_req(i32 %type, i32 %seq, i8* %ctxt) #0 {
+ssh-only-client.ll:24876:define internal i32 @client_input_global_request(i32 %type, i32 %seq, i8* %ctxt) #0 {
+ssh-only-client.ll:24930:define internal i32 @client_global_request_reply(i32 %type, i32 %seq, i8* %ctxt) #0 {
+ssh-only-client.ll:25053:define internal i32 @client_input_exit_status(i32 %type, i32 %seq, i8* %ctxt) #0 {
+ssh-only-client.ll:25095:define internal i32 @client_input_stderr_data(i32 %type, i32 %seq, i8* %ctxt) #0 {
+ssh-only-client.ll:25143:define internal i32 @client_input_stdout_data(i32 %type, i32 %seq, i8* %ctxt) #0 {
+ssh-only-client.ll:25191:define internal i32 @client_input_agent_open(i32 %type, i32 %seq, i8* %ctxt) #0 {
+ssh-only-client.ll:25319:define internal %struct.Channel.80* @client_request_forwarded_tcpip(i8* %request_type, i32 %rchan, i32 %rwindow, i32 %rmaxpack) #0 {
+ssh-only-client.ll:25518:define internal %struct.Channel.80* @client_request_forwarded_streamlocal(i8* %request_type, i32 %rchan) #0 {
+ssh-only-client.ll:25574:define internal %struct.Channel.80* @client_request_x11(i8* %request_type, i32 %rchan) #0 {
+ssh-only-client.ll:25734:define internal %struct.Channel.80* @client_request_agent(i8* %request_type, i32 %rchan) #0 {
+ssh-only-client.ll:25849:define internal i32 @client_input_hostkeys() #0 {
+ssh-only-client.ll:26383:define internal i32 @hostkeys_find(%struct.hostkey_foreach_line* %l, i8* %_ctx) #0 {
+ssh-only-client.ll:26544:define internal void @update_known_hosts(%struct.hostkeys_update_ctx* %ctx) #0 {
+ssh-only-client.ll:26825:define internal void @client_global_hostkeys_private_confirm(i32 %type, i32 %seq, i8* %_ctx) #0 {
+ssh-only-client.ll:27075:define internal void @hostkeys_update_ctx_free(%struct.hostkeys_update_ctx* %ctx) #0 {
+ssh-only-client.ll:27177:define %struct.termios* @get_saved_tio() #0 {
+ssh-only-client.ll:27186:define void @leave_raw_mode(i32 %quiet) #0 {
+ssh-only-client.ll:27241:define void @enter_raw_mode(i32 %quiet) #0 {
+ssh-only-client.ll:27349:define void @ssh_kill_proxy_command() #0 {
+ssh-only-client.ll:27365:define i32 @ssh_connect(i8* %host, %struct.addrinfo* %addrs, %struct.sockaddr_storage* %hostaddr, i16 zeroext %port, i32 %family, i32 %connection_attempts, i32* %timeout_ms, i32 %want_keepalive, i32 %needpriv) #0 {
+ssh-only-client.ll:27448:define void @ssh_exchange_identification(i32 %timeout_ms) #0 {
+ssh-only-client.ll:27945:define void @get_hostfile_hostname_ipaddr(i8* %hostname, %struct.sockaddr* %hostaddr, i16 zeroext %port, i8** %hostfile_hostname, i8** %hostfile_ipaddr) #0 {
+ssh-only-client.ll:28085:define i32 @verify_host_key(i8* %host, %struct.sockaddr* %hostaddr, %struct.sshkey* %host_key) #0 {
+ssh-only-client.ll:28480:define void @ssh_login(%struct.Sensitive* %sensitive, i8* %orighost, %struct.sockaddr* %hostaddr, i16 zeroext %port, %struct.passwd* %pw, i32 %timeout_ms) #0 {
+ssh-only-client.ll:28560:define void @ssh_put_password(i8* %password) #0 {
+ssh-only-client.ll:28624:define i32 @ssh_local_cmd(i8* %args) #0 {
+ssh-only-client.ll:28796:define void @maybe_add_key_to_agent(i8* %authfile, %struct.sshkey* %private, i8* %comment, i8* %passphrase) #0 {
+ssh-only-client.ll:28940:define internal i32 @ssh_connect_direct(i8* %host, %struct.addrinfo* %aitop, %struct.sockaddr_storage* %hostaddr, i16 zeroext %port, i32 %family, i32 %connection_attempts, i32* %timeout_ms, i32 %want_keepalive, i32 %needpriv) #0 {
+ssh-only-client.ll:29236:define internal i32 @ssh_proxy_fdpass_connect(i8* %host, i16 zeroext %port, i8* %proxy_command) #0 {
+ssh-only-client.ll:29452:define internal i32 @ssh_proxy_connect(i8* %host, i16 zeroext %port, i8* %proxy_command) #0 {
+ssh-only-client.ll:29618:define internal void @send_client_banner(i32 %connection_out, i32 %minor1) #0 {
+ssh-only-client.ll:29664:define internal void @warn_changed_key(%struct.sshkey* %host_key) #0 {
+ssh-only-client.ll:29699:define internal i32 @check_host_key(i8* %hostname, %struct.sockaddr* %hostaddr, i16 zeroext %port, %struct.sshkey* %host_key, i32 %readonly, i8** %user_hostfiles, i32 %num_user_hostfiles, i8** %system_hostfiles, i32 %num_system_hostfiles) #0 {
+ssh-only-client.ll:30878:define internal i32 @ssh_create_socket(i32 %privileged, %struct.addrinfo* %ai) #0 {
+ssh-only-client.ll:31159:define internal i32 @timeout_connect(i32 %sockfd, %struct.sockaddr* %serv_addr, i32 %addrlen, i32* %timeoutp) #0 {
+ssh-only-client.ll:31484:define internal i8* @expand_proxy_command(i8* %proxy_command, i8* %user, i8* %host, i32 %port) #0 {
+ssh-only-client.ll:31515:define internal i32 @sockaddr_is_local(%struct.sockaddr* %hostaddr) #0 {
+ssh-only-client.ll:31603:define internal i32 @check_host_cert(i8* %host, %struct.sshkey* %host_key) #0 {
+ssh-only-client.ll:31650:define internal i32 @show_other_keys(%struct.hostkeys* %hostkeys, %struct.sshkey* %key) #0 {
+ssh-only-client.ll:31799:define internal i32 @confirm(i8* %prompt) #0 {
+ssh-only-client.ll:31920:define void @ssh_kex2(i8* %host, %struct.sockaddr* %hostaddr, i16 zeroext %port) #0 {
+ssh-only-client.ll:32162:define i32 @userauth_hostbased(%struct.cauthctxt* %authctxt) #0 {
+ssh-only-client.ll:32770:define i32 @userauth_pubkey(%struct.cauthctxt* %authctxt) #0 {
+ssh-only-client.ll:32996:define i32 @userauth_kbdint(%struct.cauthctxt* %authctxt) #0 {
+ssh-only-client.ll:33093:define i32 @userauth_passwd(%struct.cauthctxt* %authctxt) #0 {
+ssh-only-client.ll:33207:define i32 @userauth_none(%struct.cauthctxt* %authctxt) #0 {
+ssh-only-client.ll:33237:define void @ssh_userauth2(i8* %local_user, i8* %server_user, i8* %host, %struct.Sensitive* %sensitive) #0 {
+ssh-only-client.ll:33394:define i32 @input_userauth_error(i32 %type, i32 %seq, i8* %ctxt) #0 {
+ssh-only-client.ll:33416:define i32 @input_userauth_ext_info(i32 %type, i32 %seqnr, i8* %ctxt) #0 {
+ssh-only-client.ll:33436:define i32 @input_userauth_service_accept(i32 %type, i32 %seqnr, i8* %ctxt) #0 {
+ssh-only-client.ll:33525:define i32 @input_userauth_success(i32 %type, i32 %seq, i8* %ctxt) #0 {
+ssh-only-client.ll:33597:define i32 @input_userauth_failure(i32 %type, i32 %seq, i8* %ctxt) #0 {
+ssh-only-client.ll:33675:define i32 @input_userauth_banner(i32 %type, i32 %seq, i8* %ctxt) #0 {
+ssh-only-client.ll:33725:define void @userauth(%struct.cauthctxt* %authctxt, i8* %authlist) #0 {
+ssh-only-client.ll:33845:define i32 @input_userauth_success_unexpected(i32 %type, i32 %seq, i8* %ctxt) #0 {
+ssh-only-client.ll:33885:define i32 @input_userauth_pk_ok(i32 %type, i32 %seq, i8* %ctxt) #0 {
+ssh-only-client.ll:34131:define i32 @input_userauth_passwd_changereq(i32 %type, i32 %seqnr, i8* %ctxt) #0 {
+ssh-only-client.ll:34336:define i32 @input_userauth_info_req(i32 %type, i32 %seq, i8* %ctxt) #0 {
+ssh-only-client.ll:34552:define internal i8* @order_hostkeyalgs(i8* %host, %struct.sockaddr* %hostaddr, i16 zeroext %port) #0 {
+ssh-only-client.ll:34801:define internal i32 @verify_host_key_callback(%struct.sshkey* %hostkey, %struct.ssh* %ssh) #0 {
+ssh-only-client.ll:34836:define internal i32 @ssh_keysign(%struct.sshkey* %key, i8** %sigp, i64* %lenp, i8* %data, i64 %datalen) #0 {
+ssh-only-client.ll:35354:define internal i32 @try_identity(%struct.identity* %id) #0 {
+ssh-only-client.ll:35415:define internal i32 @send_pubkey_test(%struct.cauthctxt* %authctxt, %struct.identity* %id) #0 {
+ssh-only-client.ll:35499:define internal %struct.sshkey* @load_identity_file(%struct.identity* %id) #0 {
+ssh-only-client.ll:35771:define internal i32 @sign_and_send_pubkey(%struct.cauthctxt* %authctxt, %struct.identity* %id) #0 {
+ssh-only-client.ll:36160:define internal i8* @authmethods_get() #0 {
+ssh-only-client.ll:36234:define internal void @pubkey_prepare(%struct.cauthctxt* %authctxt) #0 {
+ssh-only-client.ll:37455:define internal %struct.cauthmethod* @authmethod_lookup(i8* %name) #0 {
+ssh-only-client.ll:37529:define internal void @pubkey_cleanup(%struct.cauthctxt* %authctxt) #0 {
+ssh-only-client.ll:37648:define internal void @pubkey_reset(%struct.cauthctxt* %authctxt) #0 {
+ssh-only-client.ll:37686:define internal %struct.cauthmethod* @authmethod_get(i8* %authlist) #0 {
+ssh-only-client.ll:37819:define internal i32 @authmethod_is_enabled(%struct.cauthmethod* %method) #0 {
+ssh-only-client.ll:37881:define internal i8* @identity_sign_encode(%struct.identity* %id) #0 {
+ssh-only-client.ll:37935:define internal i32 @identity_sign(%struct.identity* %id, i8** %sigp, i64* %lenp, i8* %data, i64 %datalen, i32 %compat) #0 {
+ssh-only-client.ll:38074:define void @mux_exit_message(%struct.Channel* %c, i32 %exitval) #0 {
+ssh-only-client.ll:38129:define void @mux_tty_alloc_failed(%struct.Channel* %c) #0 {
+ssh-only-client.ll:38175:define void @muxserver_listen() #0 {
+ssh-only-client.ll:38485:define i32 @muxclient(i8* %path) #0 {
+ssh-only-client.ll:38887:define internal i32 @mux_master_read_cb(%struct.Channel* %c) #0 {
+ssh-only-client.ll:39115:define internal i32 @mux_client_hello_exchange(i32 %fd) #0 {
+ssh-only-client.ll:39222:define internal i32 @mux_client_request_alive(i32 %fd) #0 {
+ssh-only-client.ll:39307:define internal void @mux_client_request_terminate(i32 %fd) #0 {
+ssh-only-client.ll:39413:define internal i32 @mux_client_forwards(i32 %fd, i32 %cancel_flag) #0 {
+ssh-only-client.ll:39551:define internal i32 @mux_client_request_session(i32 %fd) #0 {
+ssh-only-client.ll:40149:define internal i32 @mux_client_request_stdio_fwd(i32 %fd) #0 {
+ssh-only-client.ll:40479:define internal void @mux_client_request_stop_listening(i32 %fd) #0 {
+ssh-only-client.ll:40572:define internal i32 @mux_client_proxy(i32 %fd) #0 {
+ssh-only-client.ll:40651:define internal i32 @process_mux_master_hello(i32 %rid, %struct.Channel* %c, %struct.sshbuf* %m, %struct.sshbuf* %r) #0 {
+ssh-only-client.ll:40812:define internal i32 @process_mux_new_session(i32 %rid, %struct.Channel* %c, %struct.sshbuf* %m, %struct.sshbuf* %r) #0 {
+ssh-only-client.ll:41544:define internal i32 @process_mux_alive_check(i32 %rid, %struct.Channel* %c, %struct.sshbuf* %m, %struct.sshbuf* %r) #0 {
+ssh-only-client.ll:41570:define internal i32 @process_mux_terminate(i32 %rid, %struct.Channel* %c, %struct.sshbuf* %m, %struct.sshbuf* %r) #0 {
+ssh-only-client.ll:41631:define internal i32 @process_mux_open_fwd(i32 %rid, %struct.Channel* %c, %struct.sshbuf* %m, %struct.sshbuf* %r) #0 {
+ssh-only-client.ll:42277:define internal i32 @process_mux_close_fwd(i32 %rid, %struct.Channel* %c, %struct.sshbuf* %m, %struct.sshbuf* %r) #0 {
+ssh-only-client.ll:42739:define internal i32 @process_mux_stdio_fwd(i32 %rid, %struct.Channel* %c, %struct.sshbuf* %m, %struct.sshbuf* %r) #0 {
+ssh-only-client.ll:43059:define internal i32 @process_mux_stop_listening(i32 %rid, %struct.Channel* %c, %struct.sshbuf* %m, %struct.sshbuf* %r) #0 {
+ssh-only-client.ll:43146:define internal i32 @process_mux_proxy(i32 %rid, %struct.Channel* %c, %struct.sshbuf* %m, %struct.sshbuf* %r) #0 {
+ssh-only-client.ll:43172:define internal void @mux_master_control_cleanup_cb(i32 %cid, i8* %unused) #0 {
+ssh-only-client.ll:43321:define internal i32 @mux_client_write_packet(i32 %fd, %struct.sshbuf* %m) #0 {
+ssh-only-client.ll:43490:define internal i32 @mux_client_read_packet(i32 %fd, %struct.sshbuf* %m) #0 {
+ssh-only-client.ll:43594:define internal i32 @mux_client_forward(i32 %fd, i32 %cancel_flag, i32 %ftype, %struct.Forward* %fwd) #0 {
+ssh-only-client.ll:43898:define internal i32 @env_permitted(i8* %env) #0 {
+ssh-only-client.ll:44003:define internal void @control_client_sighandler(i32 %signo) #0 {
+ssh-only-client.ll:44013:define internal void @control_client_sigrelay(i32 %signo) #0 {
+ssh-only-client.ll:44039:define internal void @mux_session_confirm(i32 %id, i32 %success, i8* %arg) #0 {
+ssh-only-client.ll:44307:define internal void @mux_master_session_cleanup_cb(i32 %cid, i8* %unused) #0 {
+ssh-only-client.ll:44408:define internal i8* @format_forward(i32 %ftype, %struct.Forward* %fwd) #0 {
+ssh-only-client.ll:44591:define internal i32 @compare_forward(%struct.Forward* %a, %struct.Forward* %b) #0 {
+ssh-only-client.ll:44695:define internal void @mux_confirm_remote_forward(i32 %type, i32 %seq, i8* %ctxt) #0 {
+ssh-only-client.ll:45001:define internal void @mux_stdio_confirm(i32 %id, i32 %success, i8* %arg) #0 {
+ssh-only-client.ll:45118:define internal i32 @mux_client_read(i32 %fd, %struct.sshbuf* %b, i32 %need) #0 {
+ssh-only-client.ll:45268:define internal i32 @compare_host(i8* %a, i8* %b) #0 {

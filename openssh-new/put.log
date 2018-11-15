@@ -1,0 +1,551 @@
+auth2-pubkey.c:358:				r = sshbuf_put_u8(arg, c);
+auth2-pubkey.c:363:				if ((r = sshbuf_put_u8(arg, '\\')) != 0)
+auth2-pubkey.c:367:				r = sshbuf_put_u8(arg, c);
+auth2-pubkey.c:371:				fatal("%s: sshbuf_put_u8: %s",
+auth2-pubkey.c:374:		if ((i != 0 && (r = sshbuf_put_u8(buf, ' ')) != 0) ||
+auth2-pubkey.c:375:		    (ws != 0 && (r = sshbuf_put_u8(buf, '"')) != 0) ||
+auth2-pubkey.c:376:		    (r = sshbuf_putb(buf, arg)) != 0 ||
+auth2-pubkey.c:377:		    (ws != 0 && (r = sshbuf_put_u8(buf, '"')) != 0))
+authfd.c:160:		if ((r = sshbuf_put(reply, buf, l)) != 0)
+authfd.c:189:	if ((r = sshbuf_put_u8(msg, type)) != 0 ||
+authfd.c:190:	    (r = sshbuf_put_cstring(msg, password)) != 0)
+authfd.c:297:	if ((r = sshbuf_put_u8(msg, code1)) != 0)
+authfd.c:403:	if ((r = sshbuf_put_u8(msg, SSH_AGENTC_RSA_CHALLENGE)) != 0 ||
+authfd.c:404:	    (r = sshbuf_put_u32(msg, BN_num_bits(key->rsa->n))) != 0 ||
+authfd.c:405:	    (r = sshbuf_put_bignum1(msg, key->rsa->e)) != 0 ||
+authfd.c:406:	    (r = sshbuf_put_bignum1(msg, key->rsa->n)) != 0 ||
+authfd.c:407:	    (r = sshbuf_put_bignum1(msg, challenge)) != 0 ||
+authfd.c:408:	    (r = sshbuf_put(msg, session_id, 16)) != 0 ||
+authfd.c:409:	    (r = sshbuf_put_u32(msg, 1)) != 0) /* Response type for proto 1.1 */
+authfd.c:468:	if ((r = sshbuf_put_u8(msg, SSH2_AGENTC_SIGN_REQUEST)) != 0 ||
+authfd.c:469:	    (r = sshbuf_put_string(msg, blob, blen)) != 0 ||
+authfd.c:470:	    (r = sshbuf_put_string(msg, data, datalen)) != 0 ||
+authfd.c:471:	    (r = sshbuf_put_u32(msg, flags)) != 0)
+authfd.c:506:	if ((r = sshbuf_put_u32(b, BN_num_bits(key->n))) != 0 ||
+authfd.c:507:	    (r = sshbuf_put_bignum1(b, key->n)) != 0 ||
+authfd.c:508:	    (r = sshbuf_put_bignum1(b, key->e)) != 0 ||
+authfd.c:509:	    (r = sshbuf_put_bignum1(b, key->d)) != 0 ||
+authfd.c:510:	    (r = sshbuf_put_bignum1(b, key->iqmp)) != 0 ||
+authfd.c:511:	    (r = sshbuf_put_bignum1(b, key->q)) != 0 ||
+authfd.c:512:	    (r = sshbuf_put_bignum1(b, key->p)) != 0 ||
+authfd.c:513:	    (r = sshbuf_put_cstring(b, comment)) != 0)
+authfd.c:526:	    (r = sshbuf_put_cstring(b, comment)) != 0)
+authfd.c:537:		if ((r = sshbuf_put_u8(m, SSH_AGENT_CONSTRAIN_LIFETIME)) != 0 ||
+authfd.c:538:		    (r = sshbuf_put_u32(m, life)) != 0)
+authfd.c:542:		if ((r = sshbuf_put_u8(m, SSH_AGENT_CONSTRAIN_CONFIRM)) != 0)
+authfd.c:571:		if ((r = sshbuf_put_u8(msg, type)) != 0 ||
+authfd.c:589:		if ((r = sshbuf_put_u8(msg, type)) != 0 ||
+authfd.c:627:		if ((r = sshbuf_put_u8(msg,
+authfd.c:629:		    (r = sshbuf_put_u32(msg, BN_num_bits(key->rsa->n))) != 0 ||
+authfd.c:630:		    (r = sshbuf_put_bignum1(msg, key->rsa->e)) != 0 ||
+authfd.c:631:		    (r = sshbuf_put_bignum1(msg, key->rsa->n)) != 0)
+authfd.c:638:		if ((r = sshbuf_put_u8(msg,
+authfd.c:640:		    (r = sshbuf_put_string(msg, blob, blen)) != 0)
+authfd.c:681:	if ((r = sshbuf_put_u8(msg, type)) != 0 ||
+authfd.c:682:	    (r = sshbuf_put_cstring(msg, reader_id)) != 0 ||
+authfd.c:683:	    (r = sshbuf_put_cstring(msg, pin)) != 0)
+authfd.c:713:	if ((r = sshbuf_put_u8(msg, type)) != 0)
+authfile.c:130:		if ((r = sshbuf_put(blob, buf, len)) != 0)
+bufaux.c:102:	if ((ret = sshbuf_put_u16(buffer, value)) != 0)
+bufaux.c:111:	if ((ret = sshbuf_put_u32(buffer, value)) != 0)
+bufaux.c:120:	if ((ret = sshbuf_put_u64(buffer, value)) != 0)
+bufaux.c:207:	if ((ret = sshbuf_put_string(buffer, buf, len)) != 0)
+bufaux.c:216:	if ((ret = sshbuf_put_cstring(buffer, s)) != 0)
+bufaux.c:247:	if ((ret = sshbuf_put_u8(buffer, value)) != 0)
+bufaux.c:256:	if ((ret = sshbuf_put_bignum2_bytes(buffer, s, l)) != 0)
+bufbn.c:37:	if ((ret = sshbuf_put_bignum1(buffer, value)) != 0) {
+bufbn.c:76:	if ((ret = sshbuf_put_bignum2(buffer, value)) != 0) {
+bufec.c:37:	if ((ret = sshbuf_put_ec(buffer, point, curve)) != 0) {
+buffer.c:34:	if ((ret = sshbuf_put(buffer, data, len)) != 0)
+channels.c:2512:		if ((r = sshbuf_put_cstring(modified, ctype)) != 0 ||
+channels.c:2513:		    (r = sshbuf_put_u32(modified, c->self)) != 0 ||
+channels.c:2514:		    (r = sshbuf_putb(modified, original)) != 0) {
+channels.c:2540:		if ((r = sshbuf_put_u32(modified, remote_id)) != 0 ||
+channels.c:2541:		    (r = sshbuf_put_u32(modified, c->self)) != 0 ||
+channels.c:2542:		    (r = sshbuf_putb(modified, original)) != 0) {
+channels.c:2673:	if ((r = sshbuf_put_u8(b, 0)) != 0 ||	/* padlen */
+channels.c:2674:	    (r = sshbuf_put_u8(b, type)) != 0 ||
+channels.c:2675:	    (r = sshbuf_put_u32(b, c->mux_downstream_id)) != 0 ||
+channels.c:2676:	    (r = sshbuf_put(b, cp, len)) != 0 ||
+channels.c:2677:	    (r = sshbuf_put_stringb(&downstream->output, b)) != 0) {
+clientloop.c:1921:		if ((r = sshbuf_put_u8(b, 0)) != 0 ||	/* padlen */
+clientloop.c:1922:		    (r = sshbuf_put_u8(b, SSH2_MSG_CHANNEL_OPEN)) != 0 ||
+clientloop.c:1923:		    (r = sshbuf_put_cstring(b, request_type)) != 0 ||
+clientloop.c:1924:		    (r = sshbuf_put_u32(b, rchan)) != 0 ||
+clientloop.c:1925:		    (r = sshbuf_put_u32(b, rwindow)) != 0 ||
+clientloop.c:1926:		    (r = sshbuf_put_u32(b, rmaxpack)) != 0 ||
+clientloop.c:1927:		    (r = sshbuf_put_cstring(b, listen_address)) != 0 ||
+clientloop.c:1928:		    (r = sshbuf_put_u32(b, listen_port)) != 0 ||
+clientloop.c:1929:		    (r = sshbuf_put_cstring(b, originator_address)) != 0 ||
+clientloop.c:1930:		    (r = sshbuf_put_u32(b, originator_port)) != 0 ||
+clientloop.c:1931:		    (r = sshbuf_put_stringb(&c->output, b)) != 0) {
+clientloop.c:2366:		if ( (r = sshbuf_put_cstring(signdata,
+clientloop.c:2368:		    (r = sshbuf_put_string(signdata, ssh->kex->session_id,
+kex.c:250:		if ((r = sshbuf_put_u8(b, 0)) != 0)
+kex.c:254:		if ((r = sshbuf_put_cstring(b, proposal[i])) != 0)
+kex.c:257:	if ((r = sshbuf_put_u8(b, 0)) != 0 ||	/* first_kex_packet_follows */
+kex.c:258:	    (r = sshbuf_put_u32(b, 0)) != 0)	/* uint32 reserved */
+kex.c:486:	if ((r = sshbuf_put(kex->peer, ptr, dlen)) != 0)
+kex.c:971:	if ((r = sshbuf_put_bignum2(shared_secret, secret)) == 0)
+kexc25519.c:79:	r = sshbuf_put_bignum2_bytes(out, shared_key, CURVE25519_SIZE);
+kexc25519.c:104:	if ((r = sshbuf_put_cstring(b, client_version_string)) < 0 ||
+kexc25519.c:105:	    (r = sshbuf_put_cstring(b, server_version_string)) < 0 ||
+kexc25519.c:107:	    (r = sshbuf_put_u32(b, ckexinitlen+1)) < 0 ||
+kexc25519.c:108:	    (r = sshbuf_put_u8(b, SSH2_MSG_KEXINIT)) < 0 ||
+kexc25519.c:109:	    (r = sshbuf_put(b, ckexinit, ckexinitlen)) < 0 ||
+kexc25519.c:110:	    (r = sshbuf_put_u32(b, skexinitlen+1)) < 0 ||
+kexc25519.c:111:	    (r = sshbuf_put_u8(b, SSH2_MSG_KEXINIT)) < 0 ||
+kexc25519.c:112:	    (r = sshbuf_put(b, skexinit, skexinitlen)) < 0 ||
+kexc25519.c:113:	    (r = sshbuf_put_string(b, serverhostkeyblob, sbloblen)) < 0 ||
+kexc25519.c:114:	    (r = sshbuf_put_string(b, client_dh_pub, CURVE25519_SIZE)) < 0 ||
+kexc25519.c:115:	    (r = sshbuf_put_string(b, server_dh_pub, CURVE25519_SIZE)) < 0 ||
+kexc25519.c:116:	    (r = sshbuf_put(b, shared_secret, secretlen)) < 0) {
+kexdh.c:64:	if ((r = sshbuf_put_cstring(b, client_version_string)) != 0 ||
+kexdh.c:65:	    (r = sshbuf_put_cstring(b, server_version_string)) != 0 ||
+kexdh.c:67:	    (r = sshbuf_put_u32(b, ckexinitlen+1)) != 0 ||
+kexdh.c:68:	    (r = sshbuf_put_u8(b, SSH2_MSG_KEXINIT)) != 0 ||
+kexdh.c:69:	    (r = sshbuf_put(b, ckexinit, ckexinitlen)) != 0 ||
+kexdh.c:70:	    (r = sshbuf_put_u32(b, skexinitlen+1)) != 0 ||
+kexdh.c:71:	    (r = sshbuf_put_u8(b, SSH2_MSG_KEXINIT)) != 0 ||
+kexdh.c:72:	    (r = sshbuf_put(b, skexinit, skexinitlen)) != 0 ||
+kexdh.c:73:	    (r = sshbuf_put_string(b, serverhostkeyblob, sbloblen)) != 0 ||
+kexdh.c:74:	    (r = sshbuf_put_bignum2(b, client_dh_pub)) != 0 ||
+kexdh.c:75:	    (r = sshbuf_put_bignum2(b, server_dh_pub)) != 0 ||
+kexdh.c:76:	    (r = sshbuf_put_bignum2(b, shared_secret)) != 0) {
+kexecdh.c:70:	if ((r = sshbuf_put_cstring(b, client_version_string)) != 0 ||
+kexecdh.c:71:	    (r = sshbuf_put_cstring(b, server_version_string)) != 0 ||
+kexecdh.c:73:	    (r = sshbuf_put_u32(b, ckexinitlen+1)) != 0 ||
+kexecdh.c:74:	    (r = sshbuf_put_u8(b, SSH2_MSG_KEXINIT)) != 0 ||
+kexecdh.c:75:	    (r = sshbuf_put(b, ckexinit, ckexinitlen)) != 0 ||
+kexecdh.c:76:	    (r = sshbuf_put_u32(b, skexinitlen+1)) != 0 ||
+kexecdh.c:77:	    (r = sshbuf_put_u8(b, SSH2_MSG_KEXINIT)) != 0 ||
+kexecdh.c:78:	    (r = sshbuf_put(b, skexinit, skexinitlen)) != 0 ||
+kexecdh.c:79:	    (r = sshbuf_put_string(b, serverhostkeyblob, sbloblen)) != 0 ||
+kexecdh.c:80:	    (r = sshbuf_put_ec(b, client_dh_pub, ec_group)) != 0 ||
+kexecdh.c:81:	    (r = sshbuf_put_ec(b, server_dh_pub, ec_group)) != 0 ||
+kexecdh.c:82:	    (r = sshbuf_put_bignum2(b, shared_secret)) != 0) {
+kexgex.c:67:	if ((r = sshbuf_put_cstring(b, client_version_string)) != 0 ||
+kexgex.c:68:	    (r = sshbuf_put_cstring(b, server_version_string)) != 0 ||
+kexgex.c:70:	    (r = sshbuf_put_u32(b, ckexinitlen+1)) != 0 ||
+kexgex.c:71:	    (r = sshbuf_put_u8(b, SSH2_MSG_KEXINIT)) != 0 ||
+kexgex.c:72:	    (r = sshbuf_put(b, ckexinit, ckexinitlen)) != 0 ||
+kexgex.c:73:	    (r = sshbuf_put_u32(b, skexinitlen+1)) != 0 ||
+kexgex.c:74:	    (r = sshbuf_put_u8(b, SSH2_MSG_KEXINIT)) != 0 ||
+kexgex.c:75:	    (r = sshbuf_put(b, skexinit, skexinitlen)) != 0 ||
+kexgex.c:76:	    (r = sshbuf_put_string(b, serverhostkeyblob, sbloblen)) != 0 ||
+kexgex.c:77:	    (min != -1 && (r = sshbuf_put_u32(b, min)) != 0) ||
+kexgex.c:78:	    (r = sshbuf_put_u32(b, wantbits)) != 0 ||
+kexgex.c:79:	    (max != -1 && (r = sshbuf_put_u32(b, max)) != 0) ||
+kexgex.c:80:	    (r = sshbuf_put_bignum2(b, prime)) != 0 ||
+kexgex.c:81:	    (r = sshbuf_put_bignum2(b, gen)) != 0 ||
+kexgex.c:82:	    (r = sshbuf_put_bignum2(b, client_dh_pub)) != 0 ||
+kexgex.c:83:	    (r = sshbuf_put_bignum2(b, server_dh_pub)) != 0 ||
+kexgex.c:84:	    (r = sshbuf_put_bignum2(b, shared_secret)) != 0) {
+krl.c:539:	r = sshbuf_put_bignum2_bytes(buf, blob, len);
+krl.c:561:		if ((r = sshbuf_put_string(buf, NULL, 0)) != 0)
+krl.c:567:	if ((r = sshbuf_put_string(buf, NULL, 0)) != 0)
+krl.c:606:			if ((r = sshbuf_put_u8(buf, state)) != 0 ||
+krl.c:607:			    (r = sshbuf_put_stringb(buf, sect)) != 0)
+krl.c:628:				if ((r = sshbuf_put_u64(sect,
+krl.c:639:				if ((r = sshbuf_put_u64(sect, rs->lo + i)) != 0)
+krl.c:644:			if ((r = sshbuf_put_u64(sect, rs->lo)) != 0 ||
+krl.c:645:			    (r = sshbuf_put_u64(sect, rs->hi)) != 0)
+krl.c:679:		if ((r = sshbuf_put_u8(buf, state)) != 0 ||
+krl.c:680:		    (r = sshbuf_put_stringb(buf, sect)) != 0)
+krl.c:689:		if ((r = sshbuf_put_cstring(sect, rki->key_id)) != 0)
+krl.c:693:		if ((r = sshbuf_put_u8(buf, KRL_SECTION_CERT_KEY_ID)) != 0 ||
+krl.c:694:		    (r = sshbuf_put_stringb(buf, sect)) != 0)
+krl.c:722:	if ((r = sshbuf_put(buf, KRL_MAGIC, sizeof(KRL_MAGIC) - 1)) != 0 ||
+krl.c:723:	    (r = sshbuf_put_u32(buf, KRL_FORMAT_VERSION)) != 0 ||
+krl.c:724:	    (r = sshbuf_put_u64(buf, krl->krl_version)) != 0 ||
+krl.c:725:	    (r = sshbuf_put_u64(buf, krl->generated_date)) != 0 ||
+krl.c:726:	    (r = sshbuf_put_u64(buf, krl->flags)) != 0 ||
+krl.c:727:	    (r = sshbuf_put_string(buf, NULL, 0)) != 0 ||
+krl.c:728:	    (r = sshbuf_put_cstring(buf, krl->comment)) != 0)
+krl.c:736:		if ((r = sshbuf_put_u8(buf, KRL_SECTION_CERTIFICATES)) != 0 ||
+krl.c:737:		    (r = sshbuf_put_stringb(buf, sect)) != 0)
+krl.c:745:		if ((r = sshbuf_put_string(sect, rb->blob, rb->len)) != 0)
+krl.c:749:		if ((r = sshbuf_put_u8(buf, KRL_SECTION_EXPLICIT_KEY)) != 0 ||
+krl.c:750:		    (r = sshbuf_put_stringb(buf, sect)) != 0)
+krl.c:756:		if ((r = sshbuf_put_string(sect, rb->blob, rb->len)) != 0)
+krl.c:760:		if ((r = sshbuf_put_u8(buf,
+krl.c:762:		    (r = sshbuf_put_stringb(buf, sect)) != 0)
+krl.c:769:		if ((r = sshbuf_put_u8(buf, KRL_SECTION_SIGNATURE)) != 0 ||
+krl.c:777:		if ((r = sshbuf_put_string(buf, sblob, slen)) != 0)
+monitor.c:638:		if ((r = sshbuf_put_cstring(sigbuf, proof_req)) != 0 ||
+monitor.c:639:		    (r = sshbuf_put_string(sigbuf, session_id2,
+monitor.c:678:	if ((r = sshbuf_put_string(m, signature, siglen)) != 0)
+packet.c:369:			if ((r = sshbuf_put(state->incoming_packet, buf,
+packet.c:726:			if ((r = sshbuf_put(out, buf, sizeof(buf) -
+packet.c:762:			if ((r = sshbuf_put(out, buf, sizeof(buf) -
+packet.c:848:		if ((r = sshbuf_put(state->compression_buffer,
+packet.c:855:                if ((r = sshbuf_putb(state->outgoing_packet,
+packet.c:879:	if ((r = sshbuf_put(state->outgoing_packet, buf, 4)) != 0)
+packet.c:889:	if ((r = sshbuf_put(state->output, buf, 4)) != 0)
+packet.c:1168:		if ((r = sshbuf_put(state->outgoing_packet,
+packet.c:1170:		    (r = sshbuf_putb(state->outgoing_packet,
+packet.c:1257:		if ((r = sshbuf_put(state->output, macbuf, mac->mac_len)) != 0)
+packet.c:1636:		if ((r = sshbuf_putb(state->incoming_packet,
+packet.c:1680:	if ((r = sshbuf_put(state->incoming_packet, cp + 4,
+packet.c:1880:		if ((r = sshbuf_putb(state->incoming_packet,
+packet.c:2029:	if ((r = sshbuf_put(ssh->state->input, buf, len)) != 0)
+packet.c:2467:	if ((r = sshbuf_put_string(m, kex->session_id,
+packet.c:2469:	    (r = sshbuf_put_u32(m, kex->we_need)) != 0 ||
+packet.c:2470:	    (r = sshbuf_put_u32(m, kex->hostkey_type)) != 0 ||
+packet.c:2471:	    (r = sshbuf_put_u32(m, kex->kex_type)) != 0 ||
+packet.c:2472:	    (r = sshbuf_put_stringb(m, kex->my)) != 0 ||
+packet.c:2473:	    (r = sshbuf_put_stringb(m, kex->peer)) != 0 ||
+packet.c:2474:	    (r = sshbuf_put_u32(m, kex->flags)) != 0 ||
+packet.c:2475:	    (r = sshbuf_put_cstring(m, kex->client_version_string)) != 0 ||
+packet.c:2476:	    (r = sshbuf_put_cstring(m, kex->server_version_string)) != 0)
+packet.c:2505:	if ((r = sshbuf_put_cstring(b, enc->name)) != 0 ||
+packet.c:2506:	    (r = sshbuf_put(b, &enc->cipher, sizeof(enc->cipher))) != 0 ||
+packet.c:2507:	    (r = sshbuf_put_u32(b, enc->enabled)) != 0 ||
+packet.c:2508:	    (r = sshbuf_put_u32(b, enc->block_size)) != 0 ||
+packet.c:2509:	    (r = sshbuf_put_string(b, enc->key, enc->key_len)) != 0 ||
+packet.c:2510:	    (r = sshbuf_put_string(b, enc->iv, enc->iv_len)) != 0)
+packet.c:2513:		if ((r = sshbuf_put_cstring(b, mac->name)) != 0 ||
+packet.c:2514:		    (r = sshbuf_put_u32(b, mac->enabled)) != 0 ||
+packet.c:2515:		    (r = sshbuf_put_string(b, mac->key, mac->key_len)) != 0)
+packet.c:2518:	if ((r = sshbuf_put_u32(b, comp->type)) != 0 ||
+packet.c:2519:	    (r = sshbuf_put_cstring(b, comp->name)) != 0)
+packet.c:2521:	r = sshbuf_put_stringb(m, b);
+packet.c:2540:		if ((r = sshbuf_put_u32(m, state->remote_protocol_flags)) != 0 ||
+packet.c:2541:		    (r = sshbuf_put_u32(m, ssh1cipher)) != 0 ||
+packet.c:2542:		    (r = sshbuf_put_string(m, state->ssh1_key, state->ssh1_keylen)) != 0 ||
+packet.c:2543:		    (r = sshbuf_put_u32(m, slen)) != 0 ||
+packet.c:2546:		    (r = sshbuf_put_u32(m, rlen)) != 0 ||
+packet.c:2554:		    (r = sshbuf_put_u64(m, state->rekey_limit)) != 0 ||
+packet.c:2555:		    (r = sshbuf_put_u32(m, state->rekey_interval)) != 0 ||
+packet.c:2556:		    (r = sshbuf_put_u32(m, state->p_send.seqnr)) != 0 ||
+packet.c:2557:		    (r = sshbuf_put_u64(m, state->p_send.blocks)) != 0 ||
+packet.c:2558:		    (r = sshbuf_put_u32(m, state->p_send.packets)) != 0 ||
+packet.c:2559:		    (r = sshbuf_put_u64(m, state->p_send.bytes)) != 0 ||
+packet.c:2560:		    (r = sshbuf_put_u32(m, state->p_read.seqnr)) != 0 ||
+packet.c:2561:		    (r = sshbuf_put_u64(m, state->p_read.blocks)) != 0 ||
+packet.c:2562:		    (r = sshbuf_put_u32(m, state->p_read.packets)) != 0 ||
+packet.c:2563:		    (r = sshbuf_put_u64(m, state->p_read.bytes)) != 0)
+packet.c:2569:	if ((r = sshbuf_put_u32(m, slen)) != 0 ||
+packet.c:2574:	if ((r = sshbuf_put_u32(m, rlen)) != 0 ||
+packet.c:2579:	if ((r = sshbuf_put_stringb(m, state->input)) != 0 ||
+packet.c:2580:	    (r = sshbuf_put_stringb(m, state->output)) != 0)
+packet.c:2767:	    (r = sshbuf_put(state->input, input, ilen)) != 0 ||
+packet.c:2768:	    (r = sshbuf_put(state->output, output, olen)) != 0)
+packet.c:2784:	return sshbuf_put(ssh->state->outgoing_packet, v, len);
+packet.c:2790:	return sshbuf_putb(ssh->state->outgoing_packet, b);
+packet.c:2796:	return sshbuf_put_u8(ssh->state->outgoing_packet, val);
+packet.c:2802:	return sshbuf_put_u32(ssh->state->outgoing_packet, val);
+packet.c:2808:	return sshbuf_put_u64(ssh->state->outgoing_packet, val);
+packet.c:2814:	return sshbuf_put_string(ssh->state->outgoing_packet, v, len);
+packet.c:2820:	return sshbuf_put_cstring(ssh->state->outgoing_packet, v);
+packet.c:2826:	return sshbuf_put_stringb(ssh->state->outgoing_packet, v);
+packet.c:2834:	return sshbuf_put_ec(ssh->state->outgoing_packet, v, g);
+packet.c:2842:	return sshbuf_put_bignum1(ssh->state->outgoing_packet, v);
+packet.c:2849:	return sshbuf_put_bignum2(ssh->state->outgoing_packet, v);
+packet.c:2950:	return sshbuf_put(ssh->state->outgoing_packet, buf, len);
+packet.c:2974:		if ((r = sshbuf_putb(state->output,
+serverloop.c:673:		if ((r = sshbuf_put_cstring(sigbuf,
+serverloop.c:675:		    (r = sshbuf_put_string(sigbuf,
+serverloop.c:680:		    (r = sshbuf_put_string(resp, sig, slen)) != 0) {
+serverloop.c:741:		    (r = sshbuf_put_u32(resp, allocated_listen_port)) != 0)
+serverloop.c:742:			fatal("%s: sshbuf_put_u32: %s", __func__, ssh_err(r));
+sftp-client.c:168:	if ((r = sshbuf_put_u8(msg, code)) != 0 ||
+sftp-client.c:169:	    (r = sshbuf_put_u32(msg, id)) != 0 ||
+sftp-client.c:170:	    (r = sshbuf_put_string(msg, s, len)) != 0)
+sftp-client.c:186:	if ((r = sshbuf_put_u8(msg, code)) != 0 ||
+sftp-client.c:187:	    (r = sshbuf_put_u32(msg, id)) != 0 ||
+sftp-client.c:188:	    (r = sshbuf_put_string(msg, s, len)) != 0 ||
+sftp-client.c:395:	if ((r = sshbuf_put_u8(msg, SSH2_FXP_INIT)) != 0 ||
+sftp-client.c:396:	    (r = sshbuf_put_u32(msg, SSH2_FILEXFER_VERSION)) != 0)
+sftp-client.c:494:	if ((r = sshbuf_put_u8(msg, SSH2_FXP_CLOSE)) != 0 ||
+sftp-client.c:495:	    (r = sshbuf_put_u32(msg, id)) != 0 ||
+sftp-client.c:496:	    (r = sshbuf_put_string(msg, handle, handle_len)) != 0)
+sftp-client.c:529:	if ((r = sshbuf_put_u8(msg, SSH2_FXP_OPENDIR)) != 0 ||
+sftp-client.c:530:	    (r = sshbuf_put_u32(msg, id)) != 0 ||
+sftp-client.c:531:	    (r = sshbuf_put_cstring(msg, path)) != 0)
+sftp-client.c:554:		if ((r = sshbuf_put_u8(msg, SSH2_FXP_READDIR)) != 0 ||
+sftp-client.c:555:		    (r = sshbuf_put_u32(msg, id)) != 0 ||
+sftp-client.c:556:		    (r = sshbuf_put_string(msg, handle, handle_len)) != 0)
+sftp-client.c:877:		if ((r = sshbuf_put_u8(msg, SSH2_FXP_EXTENDED)) != 0 ||
+sftp-client.c:878:		    (r = sshbuf_put_u32(msg, id)) != 0 ||
+sftp-client.c:879:		    (r = sshbuf_put_cstring(msg,
+sftp-client.c:883:		if ((r = sshbuf_put_u8(msg, SSH2_FXP_RENAME)) != 0 ||
+sftp-client.c:884:		    (r = sshbuf_put_u32(msg, id)) != 0)
+sftp-client.c:887:	if ((r = sshbuf_put_cstring(msg, oldpath)) != 0 ||
+sftp-client.c:888:	    (r = sshbuf_put_cstring(msg, newpath)) != 0)
+sftp-client.c:921:	if ((r = sshbuf_put_u8(msg, SSH2_FXP_EXTENDED)) != 0 ||
+sftp-client.c:922:	    (r = sshbuf_put_u32(msg, id)) != 0 ||
+sftp-client.c:923:	    (r = sshbuf_put_cstring(msg, "hardlink@openssh.com")) != 0 ||
+sftp-client.c:924:	    (r = sshbuf_put_cstring(msg, oldpath)) != 0 ||
+sftp-client.c:925:	    (r = sshbuf_put_cstring(msg, newpath)) != 0)
+sftp-client.c:957:	if ((r = sshbuf_put_u8(msg, SSH2_FXP_SYMLINK)) != 0 ||
+sftp-client.c:958:	    (r = sshbuf_put_u32(msg, id)) != 0 ||
+sftp-client.c:959:	    (r = sshbuf_put_cstring(msg, oldpath)) != 0 ||
+sftp-client.c:960:	    (r = sshbuf_put_cstring(msg, newpath)) != 0)
+sftp-client.c:990:	if ((r = sshbuf_put_u8(msg, SSH2_FXP_EXTENDED)) != 0 ||
+sftp-client.c:991:	    (r = sshbuf_put_u32(msg, id)) != 0 ||
+sftp-client.c:992:	    (r = sshbuf_put_cstring(msg, "fsync@openssh.com")) != 0 ||
+sftp-client.c:993:	    (r = sshbuf_put_string(msg, handle, handle_len)) != 0)
+sftp-client.c:1081:	if ((r = sshbuf_put_u8(msg, SSH2_FXP_EXTENDED)) != 0 ||
+sftp-client.c:1082:	    (r = sshbuf_put_u32(msg, id)) != 0 ||
+sftp-client.c:1083:	    (r = sshbuf_put_cstring(msg, "statvfs@openssh.com")) != 0 ||
+sftp-client.c:1084:	    (r = sshbuf_put_cstring(msg, path)) != 0)
+sftp-client.c:1110:	if ((r = sshbuf_put_u8(msg, SSH2_FXP_EXTENDED)) != 0 ||
+sftp-client.c:1111:	    (r = sshbuf_put_u32(msg, id)) != 0 ||
+sftp-client.c:1112:	    (r = sshbuf_put_cstring(msg, "fstatvfs@openssh.com")) != 0 ||
+sftp-client.c:1113:	    (r = sshbuf_put_string(msg, handle, handle_len)) != 0)
+sftp-client.c:1132:	if ((r = sshbuf_put_u8(msg, SSH2_FXP_READ)) != 0 ||
+sftp-client.c:1133:	    (r = sshbuf_put_u32(msg, id)) != 0 ||
+sftp-client.c:1134:	    (r = sshbuf_put_string(msg, handle, handle_len)) != 0 ||
+sftp-client.c:1135:	    (r = sshbuf_put_u64(msg, offset)) != 0 ||
+sftp-client.c:1136:	    (r = sshbuf_put_u32(msg, len)) != 0)
+sftp-client.c:1197:	if ((r = sshbuf_put_u8(msg, SSH2_FXP_OPEN)) != 0 ||
+sftp-client.c:1198:	    (r = sshbuf_put_u32(msg, id)) != 0 ||
+sftp-client.c:1199:	    (r = sshbuf_put_cstring(msg, remote_path)) != 0 ||
+sftp-client.c:1200:	    (r = sshbuf_put_u32(msg, SSH2_FXF_READ)) != 0 ||
+sftp-client.c:1625:	if ((r = sshbuf_put_u8(msg, SSH2_FXP_OPEN)) != 0 ||
+sftp-client.c:1626:	    (r = sshbuf_put_u32(msg, id)) != 0 ||
+sftp-client.c:1627:	    (r = sshbuf_put_cstring(msg, remote_path)) != 0 ||
+sftp-client.c:1628:	    (r = sshbuf_put_u32(msg, SSH2_FXF_WRITE|SSH2_FXF_CREAT|
+sftp-client.c:1682:			if ((r = sshbuf_put_u8(msg, SSH2_FXP_WRITE)) != 0 ||
+sftp-client.c:1683:			    (r = sshbuf_put_u32(msg, ack->id)) != 0 ||
+sftp-client.c:1684:			    (r = sshbuf_put_string(msg, handle,
+sftp-client.c:1686:			    (r = sshbuf_put_u64(msg, offset)) != 0 ||
+sftp-client.c:1687:			    (r = sshbuf_put_string(msg, data, len)) != 0)
+sftp-common.c:158:	if ((r = sshbuf_put_u32(b, a->flags)) != 0)
+sftp-common.c:161:		if ((r = sshbuf_put_u64(b, a->size)) != 0)
+sftp-common.c:165:		if ((r = sshbuf_put_u32(b, a->uid)) != 0 ||
+sftp-common.c:166:		    (r = sshbuf_put_u32(b, a->gid)) != 0)
+sftp-common.c:170:		if ((r = sshbuf_put_u32(b, a->perm)) != 0)
+sftp-common.c:174:		if ((r = sshbuf_put_u32(b, a->atime)) != 0 ||
+sftp-common.c:175:		    (r = sshbuf_put_u32(b, a->mtime)) != 0)
+sftp-server.c:487:	if ((r = sshbuf_put_stringb(oqueue, m)) != 0)
+sftp-server.c:522:	if ((r = sshbuf_put_u8(msg, SSH2_FXP_STATUS)) != 0 ||
+sftp-server.c:523:	    (r = sshbuf_put_u32(msg, id)) != 0 ||
+sftp-server.c:524:	    (r = sshbuf_put_u32(msg, status)) != 0)
+sftp-server.c:527:		if ((r = sshbuf_put_cstring(msg,
+sftp-server.c:529:		    (r = sshbuf_put_cstring(msg, "")) != 0)
+sftp-server.c:543:	if ((r = sshbuf_put_u8(msg, type)) != 0 ||
+sftp-server.c:544:	    (r = sshbuf_put_u32(msg, id)) != 0 ||
+sftp-server.c:545:	    (r = sshbuf_put_string(msg, data, dlen)) != 0)
+sftp-server.c:578:	if ((r = sshbuf_put_u8(msg, SSH2_FXP_NAME)) != 0 ||
+sftp-server.c:579:	    (r = sshbuf_put_u32(msg, id)) != 0 ||
+sftp-server.c:580:	    (r = sshbuf_put_u32(msg, count)) != 0)
+sftp-server.c:584:		if ((r = sshbuf_put_cstring(msg, stats[i].name)) != 0 ||
+sftp-server.c:585:		    (r = sshbuf_put_cstring(msg, stats[i].long_name)) != 0 ||
+sftp-server.c:602:	if ((r = sshbuf_put_u8(msg, SSH2_FXP_ATTRS)) != 0 ||
+sftp-server.c:603:	    (r = sshbuf_put_u32(msg, id)) != 0 ||
+sftp-server.c:622:	if ((r = sshbuf_put_u8(msg, SSH2_FXP_EXTENDED_REPLY)) != 0 ||
+sftp-server.c:623:	    (r = sshbuf_put_u32(msg, id)) != 0 ||
+sftp-server.c:624:	    (r = sshbuf_put_u64(msg, st->f_bsize)) != 0 ||
+sftp-server.c:625:	    (r = sshbuf_put_u64(msg, st->f_frsize)) != 0 ||
+sftp-server.c:626:	    (r = sshbuf_put_u64(msg, st->f_blocks)) != 0 ||
+sftp-server.c:627:	    (r = sshbuf_put_u64(msg, st->f_bfree)) != 0 ||
+sftp-server.c:628:	    (r = sshbuf_put_u64(msg, st->f_bavail)) != 0 ||
+sftp-server.c:629:	    (r = sshbuf_put_u64(msg, st->f_files)) != 0 ||
+sftp-server.c:630:	    (r = sshbuf_put_u64(msg, st->f_ffree)) != 0 ||
+sftp-server.c:631:	    (r = sshbuf_put_u64(msg, st->f_favail)) != 0 ||
+sftp-server.c:632:	    (r = sshbuf_put_u64(msg, FSID_TO_ULONG(st->f_fsid))) != 0 ||
+sftp-server.c:633:	    (r = sshbuf_put_u64(msg, flag)) != 0 ||
+sftp-server.c:634:	    (r = sshbuf_put_u64(msg, st->f_namemax)) != 0)
+sftp-server.c:653:	if ((r = sshbuf_put_u8(msg, SSH2_FXP_VERSION)) != 0 ||
+sftp-server.c:654:	    (r = sshbuf_put_u32(msg, SSH2_FILEXFER_VERSION)) != 0 ||
+sftp-server.c:656:	    (r = sshbuf_put_cstring(msg, "posix-rename@openssh.com")) != 0 ||
+sftp-server.c:657:	    (r = sshbuf_put_cstring(msg, "1")) != 0 || /* version */
+sftp-server.c:659:	    (r = sshbuf_put_cstring(msg, "statvfs@openssh.com")) != 0 ||
+sftp-server.c:660:	    (r = sshbuf_put_cstring(msg, "2")) != 0 || /* version */
+sftp-server.c:662:	    (r = sshbuf_put_cstring(msg, "fstatvfs@openssh.com")) != 0 ||
+sftp-server.c:663:	    (r = sshbuf_put_cstring(msg, "2")) != 0 || /* version */
+sftp-server.c:665:	    (r = sshbuf_put_cstring(msg, "hardlink@openssh.com")) != 0 ||
+sftp-server.c:666:	    (r = sshbuf_put_cstring(msg, "1")) != 0 || /* version */
+sftp-server.c:668:	    (r = sshbuf_put_cstring(msg, "fsync@openssh.com")) != 0 ||
+sftp-server.c:669:	    (r = sshbuf_put_cstring(msg, "1")) != 0) /* version */
+sftp-server.c:1679:			} else if ((r = sshbuf_put(iqueue, buf, len)) != 0) {
+ssh-agent.c:236:	if ((r = sshbuf_put_u32(e->output, 1)) != 0 ||
+ssh-agent.c:237:	    (r = sshbuf_put_u8(e->output, success ?
+ssh-agent.c:253:	if ((r = sshbuf_put_u8(msg, (version == 1) ?
+ssh-agent.c:256:	    (r = sshbuf_put_u32(msg, tab->nentries)) != 0)
+ssh-agent.c:261:			if ((r = sshbuf_put_u32(msg,
+ssh-agent.c:263:			    (r = sshbuf_put_bignum1(msg,
+ssh-agent.c:265:			    (r = sshbuf_put_bignum1(msg,
+ssh-agent.c:279:			if ((r = sshbuf_put_string(msg, blob, blen)) != 0)
+ssh-agent.c:284:		if ((r = sshbuf_put_cstring(msg, id->comment)) != 0)
+ssh-agent.c:287:	if ((r = sshbuf_put_stringb(e->output, msg)) != 0)
+ssh-agent.c:355:		if ((r = sshbuf_put_u8(msg, SSH_AGENT_RSA_RESPONSE)) != 0 ||
+ssh-agent.c:356:		    (r = sshbuf_put(msg, mdbuf, sizeof(mdbuf))) != 0)
+ssh-agent.c:363:	if ((r = sshbuf_put_u8(msg, SSH_AGENT_FAILURE)) != 0)
+ssh-agent.c:366:	if ((r = sshbuf_put_stringb(e->output, msg)) != 0)
+ssh-agent.c:428:		if ((r = sshbuf_put_u8(msg, SSH2_AGENT_SIGN_RESPONSE)) != 0 ||
+ssh-agent.c:429:		    (r = sshbuf_put_string(msg, signature, slen)) != 0)
+ssh-agent.c:431:	} else if ((r = sshbuf_put_u8(msg, SSH_AGENT_FAILURE)) != 0)
+ssh-agent.c:434:	if ((r = sshbuf_put_stringb(e->output, msg)) != 0)
+ssh-agent.c:734:	if ((r = sshbuf_put_u8(msg,
+ssh-agent.c:738:	    (r = sshbuf_put_u32(msg, 0)) != 0 ||
+ssh-agent.c:739:	    (r = sshbuf_put_stringb(e->output, msg)) != 0)
+ssh-agent.c:1132:				if ((r = sshbuf_put(sockets[i].input,
+ssh_api.c:224:	return sshbuf_put(ssh_packet_get_input(ssh), data, len);
+ssh_api.c:348:			if ((r = sshbuf_put(ssh_packet_get_output(ssh),
+ssh_api.c:390:	if ((r = sshbuf_put(ssh_packet_get_output(ssh), buf, strlen(buf))) != 0)
+sshbuf-getput-basic.c:236:sshbuf_put(struct sshbuf *buf, const void *v, size_t len)
+sshbuf-getput-basic.c:249:sshbuf_putb(struct sshbuf *buf, const struct sshbuf *v)
+sshbuf-getput-basic.c:251:	return sshbuf_put(buf, sshbuf_ptr(v), sshbuf_len(v));
+sshbuf-getput-basic.c:255:sshbuf_putf(struct sshbuf *buf, const char *fmt, ...)
+sshbuf-getput-basic.c:261:	r = sshbuf_putfv(buf, fmt, ap);
+sshbuf-getput-basic.c:267:sshbuf_putfv(struct sshbuf *buf, const char *fmt, va_list ap)
+sshbuf-getput-basic.c:300:sshbuf_put_u64(struct sshbuf *buf, u_int64_t val)
+sshbuf-getput-basic.c:312:sshbuf_put_u32(struct sshbuf *buf, u_int32_t val)
+sshbuf-getput-basic.c:324:sshbuf_put_u16(struct sshbuf *buf, u_int16_t val)
+sshbuf-getput-basic.c:336:sshbuf_put_u8(struct sshbuf *buf, u_char val)
+sshbuf-getput-basic.c:348:sshbuf_put_string(struct sshbuf *buf, const void *v, size_t len)
+sshbuf-getput-basic.c:366:sshbuf_put_cstring(struct sshbuf *buf, const char *v)
+sshbuf-getput-basic.c:368:	return sshbuf_put_string(buf, (u_char *)v, v == NULL ? 0 : strlen(v));
+sshbuf-getput-basic.c:372:sshbuf_put_stringb(struct sshbuf *buf, const struct sshbuf *v)
+sshbuf-getput-basic.c:374:	return sshbuf_put_string(buf, sshbuf_ptr(v), sshbuf_len(v));
+sshbuf-getput-basic.c:402:sshbuf_put_bignum2_bytes(struct sshbuf *buf, const void *v, size_t len)
+sshbuf-getput-crypto.c:147:sshbuf_put_bignum2(struct sshbuf *buf, const BIGNUM *v)
+sshbuf-getput-crypto.c:160:	if ((r = sshbuf_put_string(buf, d + 1 - prepend, len + prepend)) < 0) {
+sshbuf-getput-crypto.c:169:sshbuf_put_bignum1(struct sshbuf *buf, const BIGNUM *v)
+sshbuf-getput-crypto.c:192:sshbuf_put_ec(struct sshbuf *buf, const EC_POINT *v, const EC_GROUP *g)
+sshbuf-getput-crypto.c:212:	ret = sshbuf_put_string(buf, d, len);
+sshbuf-getput-crypto.c:218:sshbuf_put_eckey(struct sshbuf *buf, const EC_KEY *v)
+sshbuf-getput-crypto.c:220:	return sshbuf_put_ec(buf, EC_KEY_get0_public_key(v),
+sshbuf-misc.c:129:	if ((r = sshbuf_put(buf, p, nlen)) < 0) {
+sshconnect2.c:1635:	if ((r = sshbuf_put_u32(b, sock) != 0) ||
+sshconnect2.c:1636:	    (r = sshbuf_put_string(b, data, datalen)) != 0)
+sshconnect2.c:1761:	/* XXX sshbuf_put_stringf? */
+sshconnect2.c:1777:	if ((r = sshbuf_put_string(b, session_id2, session_id2_len)) != 0 ||
+sshconnect2.c:1778:	    (r = sshbuf_put_u8(b, SSH2_MSG_USERAUTH_REQUEST)) != 0 ||
+sshconnect2.c:1779:	    (r = sshbuf_put_cstring(b, authctxt->server_user)) != 0 ||
+sshconnect2.c:1780:	    (r = sshbuf_put_cstring(b, service)) != 0 ||
+sshconnect2.c:1781:	    (r = sshbuf_put_cstring(b, authctxt->method->name)) != 0 ||
+sshconnect2.c:1782:	    (r = sshbuf_put_cstring(b, key_ssh_name(private))) != 0 ||
+sshconnect2.c:1783:	    (r = sshbuf_put_string(b, keyblob, keylen)) != 0 ||
+sshconnect2.c:1784:	    (r = sshbuf_put_cstring(b, chost)) != 0 ||
+sshconnect2.c:1785:	    (r = sshbuf_put_cstring(b, authctxt->local_user)) != 0) {
+sshd.c:935:	if ((r = sshbuf_put_stringb(m, conf)) != 0)
+ssh-dss.c:106:		if ((ret = sshbuf_put_cstring(b, "ssh-dss")) != 0 ||
+ssh-dss.c:107:		    (ret = sshbuf_put_string(b, sigblob, SIGBLOB_LEN)) != 0)
+ssh-ecdsa.c:83:	if ((ret = sshbuf_put_bignum2(bb, sig->r)) != 0 ||
+ssh-ecdsa.c:84:	    (ret = sshbuf_put_bignum2(bb, sig->s)) != 0)
+ssh-ecdsa.c:86:	if ((ret = sshbuf_put_cstring(b, sshkey_ssh_name_plain(key))) != 0 ||
+ssh-ecdsa.c:87:	    (ret = sshbuf_put_stringb(b, bb)) != 0)
+ssh-ed25519.c:69:	if ((r = sshbuf_put_cstring(b, "ssh-ed25519")) != 0 ||
+ssh-ed25519.c:70:	    (r = sshbuf_put_string(b, sig, smlen - datalen)) != 0)
+sshkey.c:749:		if ((ret = sshbuf_putb(b, key->cert->certblob)) != 0)
+sshkey.c:756:		if ((ret = sshbuf_put_cstring(b, typename)) != 0 ||
+sshkey.c:757:		    (ret = sshbuf_put_bignum2(b, key->dsa->p)) != 0 ||
+sshkey.c:758:		    (ret = sshbuf_put_bignum2(b, key->dsa->q)) != 0 ||
+sshkey.c:759:		    (ret = sshbuf_put_bignum2(b, key->dsa->g)) != 0 ||
+sshkey.c:760:		    (ret = sshbuf_put_bignum2(b, key->dsa->pub_key)) != 0)
+sshkey.c:767:		if ((ret = sshbuf_put_cstring(b, typename)) != 0 ||
+sshkey.c:768:		    (ret = sshbuf_put_cstring(b,
+sshkey.c:770:		    (ret = sshbuf_put_eckey(b, key->ecdsa)) != 0)
+sshkey.c:777:		if ((ret = sshbuf_put_cstring(b, typename)) != 0 ||
+sshkey.c:778:		    (ret = sshbuf_put_bignum2(b, key->rsa->e)) != 0 ||
+sshkey.c:779:		    (ret = sshbuf_put_bignum2(b, key->rsa->n)) != 0)
+sshkey.c:786:		if ((ret = sshbuf_put_cstring(b, typename)) != 0 ||
+sshkey.c:787:		    (ret = sshbuf_put_string(b,
+sshkey.c:813:		r = sshbuf_put_stringb(b, tmp);
+sshkey.c:1437:	if ((r = sshbuf_putf(b, "%u %s %s", bits, dec_e, dec_n)) != 0)
+sshkey.c:1465:		if ((r = sshbuf_putf(b, "%s %s",
+sshkey.c:1718:	if ((ret = sshbuf_putb(to->certblob, from->certblob)) != 0 ||
+sshkey.c:1719:	    (ret = sshbuf_putb(to->critical, from->critical)) != 0 ||
+sshkey.c:1720:	    (ret = sshbuf_putb(to->extensions, from->extensions)) != 0)
+sshkey.c:1841:	if ((ret = sshbuf_putb(key->cert->certblob, certbuf)) != 0)
+sshkey.c:1904:	if ((ret = sshbuf_putb(key->cert->critical, crit)) != 0 ||
+sshkey.c:1906:	    (ret = sshbuf_putb(key->cert->extensions, exts)) != 0))
+sshkey.c:2395:	if ((ret = sshbuf_put_cstring(cert, sshkey_ssh_name(k))) != 0)
+sshkey.c:2400:	if ((ret = sshbuf_put_string(cert, nonce, sizeof(nonce))) != 0)
+sshkey.c:2407:		if ((ret = sshbuf_put_bignum2(cert, k->dsa->p)) != 0 ||
+sshkey.c:2408:		    (ret = sshbuf_put_bignum2(cert, k->dsa->q)) != 0 ||
+sshkey.c:2409:		    (ret = sshbuf_put_bignum2(cert, k->dsa->g)) != 0 ||
+sshkey.c:2410:		    (ret = sshbuf_put_bignum2(cert, k->dsa->pub_key)) != 0)
+sshkey.c:2415:		if ((ret = sshbuf_put_cstring(cert,
+sshkey.c:2417:		    (ret = sshbuf_put_ec(cert,
+sshkey.c:2424:		if ((ret = sshbuf_put_bignum2(cert, k->rsa->e)) != 0 ||
+sshkey.c:2425:		    (ret = sshbuf_put_bignum2(cert, k->rsa->n)) != 0)
+sshkey.c:2430:		if ((ret = sshbuf_put_string(cert,
+sshkey.c:2439:	if ((ret = sshbuf_put_u64(cert, k->cert->serial)) != 0 ||
+sshkey.c:2440:	    (ret = sshbuf_put_u32(cert, k->cert->type)) != 0 ||
+sshkey.c:2441:	    (ret = sshbuf_put_cstring(cert, k->cert->key_id)) != 0)
+sshkey.c:2449:		if ((ret = sshbuf_put_cstring(principals,
+sshkey.c:2453:	if ((ret = sshbuf_put_stringb(cert, principals)) != 0 ||
+sshkey.c:2454:	    (ret = sshbuf_put_u64(cert, k->cert->valid_after)) != 0 ||
+sshkey.c:2455:	    (ret = sshbuf_put_u64(cert, k->cert->valid_before)) != 0 ||
+sshkey.c:2456:	    (ret = sshbuf_put_stringb(cert, k->cert->critical)) != 0 ||
+sshkey.c:2457:	    (ret = sshbuf_put_stringb(cert, k->cert->extensions)) != 0 ||
+sshkey.c:2458:	    (ret = sshbuf_put_string(cert, NULL, 0)) != 0 || /* Reserved */
+sshkey.c:2459:	    (ret = sshbuf_put_string(cert, ca_blob, ca_len)) != 0)
+sshkey.c:2468:	if ((ret = sshbuf_put_string(cert, sig_blob, sig_len)) != 0)
+sshkey.c:2579:	if ((r = sshbuf_put_cstring(b, sshkey_ssh_name(key))) != 0)
+sshkey.c:2584:		if ((r = sshbuf_put_bignum2(b, key->rsa->n)) != 0 ||
+sshkey.c:2585:		    (r = sshbuf_put_bignum2(b, key->rsa->e)) != 0 ||
+sshkey.c:2586:		    (r = sshbuf_put_bignum2(b, key->rsa->d)) != 0 ||
+sshkey.c:2587:		    (r = sshbuf_put_bignum2(b, key->rsa->iqmp)) != 0 ||
+sshkey.c:2588:		    (r = sshbuf_put_bignum2(b, key->rsa->p)) != 0 ||
+sshkey.c:2589:		    (r = sshbuf_put_bignum2(b, key->rsa->q)) != 0)
+sshkey.c:2597:		if ((r = sshbuf_put_stringb(b, key->cert->certblob)) != 0 ||
+sshkey.c:2598:		    (r = sshbuf_put_bignum2(b, key->rsa->d)) != 0 ||
+sshkey.c:2599:		    (r = sshbuf_put_bignum2(b, key->rsa->iqmp)) != 0 ||
+sshkey.c:2600:		    (r = sshbuf_put_bignum2(b, key->rsa->p)) != 0 ||
+sshkey.c:2601:		    (r = sshbuf_put_bignum2(b, key->rsa->q)) != 0)
+sshkey.c:2605:		if ((r = sshbuf_put_bignum2(b, key->dsa->p)) != 0 ||
+sshkey.c:2606:		    (r = sshbuf_put_bignum2(b, key->dsa->q)) != 0 ||
+sshkey.c:2607:		    (r = sshbuf_put_bignum2(b, key->dsa->g)) != 0 ||
+sshkey.c:2608:		    (r = sshbuf_put_bignum2(b, key->dsa->pub_key)) != 0 ||
+sshkey.c:2609:		    (r = sshbuf_put_bignum2(b, key->dsa->priv_key)) != 0)
+sshkey.c:2617:		if ((r = sshbuf_put_stringb(b, key->cert->certblob)) != 0 ||
+sshkey.c:2618:		    (r = sshbuf_put_bignum2(b, key->dsa->priv_key)) != 0)
+sshkey.c:2623:		if ((r = sshbuf_put_cstring(b,
+sshkey.c:2625:		    (r = sshbuf_put_eckey(b, key->ecdsa)) != 0 ||
+sshkey.c:2626:		    (r = sshbuf_put_bignum2(b,
+sshkey.c:2635:		if ((r = sshbuf_put_stringb(b, key->cert->certblob)) != 0 ||
+sshkey.c:2636:		    (r = sshbuf_put_bignum2(b,
+sshkey.c:2643:		if ((r = sshbuf_put_string(b, key->ed25519_pk,
+sshkey.c:2645:		    (r = sshbuf_put_string(b, key->ed25519_sk,
+sshkey.c:2654:		if ((r = sshbuf_put_stringb(b, key->cert->certblob)) != 0 ||
+sshkey.c:2655:		    (r = sshbuf_put_string(b, key->ed25519_pk,
+sshkey.c:2657:		    (r = sshbuf_put_string(b, key->ed25519_sk,
+sshkey.c:3083:		if ((r = sshbuf_put_string(kdf, salt, SALT_LEN)) != 0 ||
+sshkey.c:3084:		    (r = sshbuf_put_u32(kdf, rounds)) != 0)
+sshkey.c:3095:	if ((r = sshbuf_put(encoded, AUTH_MAGIC, sizeof(AUTH_MAGIC))) != 0 ||
+sshkey.c:3096:	    (r = sshbuf_put_cstring(encoded, ciphername)) != 0 ||
+sshkey.c:3097:	    (r = sshbuf_put_cstring(encoded, kdfname)) != 0 ||
+sshkey.c:3098:	    (r = sshbuf_put_stringb(encoded, kdf)) != 0 ||
+sshkey.c:3099:	    (r = sshbuf_put_u32(encoded, 1)) != 0 ||	/* number of keys */
+sshkey.c:3101:	    (r = sshbuf_put_string(encoded, pubkeyblob, pubkeylen)) != 0)
+sshkey.c:3108:	if ((r = sshbuf_put_u32(encrypted, check)) != 0 ||
+sshkey.c:3109:	    (r = sshbuf_put_u32(encrypted, check)) != 0)
+sshkey.c:3114:	    (r = sshbuf_put_cstring(encrypted, comment)) != 0)
+sshkey.c:3120:		if ((r = sshbuf_put_u8(encrypted, ++i & 0xff)) != 0)
+sshkey.c:3125:	if ((r = sshbuf_put_u32(encoded, sshbuf_len(encrypted))) != 0)
+sshkey.c:3143:	if ((r = sshbuf_put(blob, MARK_BEGIN, MARK_BEGIN_LEN)) != 0)
+sshkey.c:3146:		if ((r = sshbuf_put_u8(blob, b64[i])) != 0)
+sshkey.c:3149:		if (i % 70 == 69 && (r = sshbuf_put_u8(blob, '\n')) != 0)
+sshkey.c:3152:	if (i % 70 != 69 && (r = sshbuf_put_u8(blob, '\n')) != 0)
+sshkey.c:3154:	if ((r = sshbuf_put(blob, MARK_END, MARK_END_LEN)) != 0)
+sshkey.c:3225:			if ((r = sshbuf_put_u8(encoded, *cp)) != 0)
+sshkey.c:3235:				if ((r = sshbuf_put_u8(encoded, 0)) != 0)
+sshkey.c:3444:	if ((r = sshbuf_put_bignum1(buffer, key->rsa->d)) != 0 ||
+sshkey.c:3445:	    (r = sshbuf_put_bignum1(buffer, key->rsa->iqmp)) != 0 ||
+sshkey.c:3446:	    (r = sshbuf_put_bignum1(buffer, key->rsa->q)) != 0 ||
+sshkey.c:3447:	    (r = sshbuf_put_bignum1(buffer, key->rsa->p)) != 0)
+sshkey.c:3452:	if ((r = sshbuf_put(buffer, buf, 8 - (sshbuf_len(buffer) % 8))) != 0)
+sshkey.c:3462:	if ((r = sshbuf_put(encrypted, LEGACY_BEGIN,
+sshkey.c:3467:	if ((r = sshbuf_put_u8(encrypted, cipher_num)) != 0 ||
+sshkey.c:3468:	    (r = sshbuf_put_u32(encrypted, 0)) != 0)
+sshkey.c:3472:	if ((r = sshbuf_put_u32(encrypted, BN_num_bits(key->rsa->n))) != 0 ||
+sshkey.c:3473:	    (r = sshbuf_put_bignum1(encrypted, key->rsa->n)) != 0 ||
+sshkey.c:3474:	    (r = sshbuf_put_bignum1(encrypted, key->rsa->e)) != 0 ||
+sshkey.c:3475:	    (r = sshbuf_put_cstring(encrypted, comment)) != 0)
+sshkey.c:3489:	r = sshbuf_putb(blob, encrypted);
+sshkey.c:3550:	if ((r = sshbuf_put(blob, bptr, blen)) != 0)
+ssh-keygen.c:1501:	if ((r = sshbuf_put_cstring(c, name)) != 0 ||
+ssh-keygen.c:1502:	    (r = sshbuf_put_string(c, NULL, 0)) != 0)
+ssh-keygen.c:1515:	if ((r = sshbuf_put_cstring(b, value)) != 0 ||
+ssh-keygen.c:1516:	    (r = sshbuf_put_cstring(c, name)) != 0 ||
+ssh-keygen.c:1517:	    (r = sshbuf_put_stringb(c, b)) != 0)
+ssh-keyscan.c:207:	if ((r = sshbuf_put(msg, c->c_data, c->c_plen)) != 0 ||
+ssh-keysign.c:302:	if ((r = sshbuf_put_string(b, signature, slen)) != 0)
+ssh-rsa.c:139:	if ((ret = sshbuf_put_cstring(b, rsa_hash_alg_ident(hash_alg))) != 0 ||
+ssh-rsa.c:140:	    (ret = sshbuf_put_string(b, sig, slen)) != 0)
