@@ -1,0 +1,91 @@
+sxl463@cse-p344siis10:openssh-7.4p1$ ./test.sh 
+spawn ./ssh -v sxl463@127.0.0.1
+OpenSSH_7.4p1, OpenSSL 1.0.1f 6 Jan 2014
+in wrappers.c, LINE 1312, strndup malloced pointer 0x560f27f7a2c0
+in wrappers.c, LINE 1312, strndup malloced pointer 0x560f27f7a360
+in wrappers.c, LINE 1312, strndup malloced pointer 0x560f27f7a440
+in wrappers.c, LINE 1312, strndup malloced pointer 0x560f27f7a570
+in wrappers.c, LINE 1312, strndup malloced pointer 0x560f27f7a6a0
+debug1: Connecting to 127.0.0.1 [127.0.0.1] port 22.
+debug1: ****
+ sshconnect.c Line 462, shen login time begin: ***
+
+debug1: Connection established.
+key_load_public: invalid format
+debug1: identity file /home/sxl463/.ssh/id_rsa type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/sxl463/.ssh/id_rsa-cert type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/sxl463/.ssh/id_dsa type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/sxl463/.ssh/id_dsa-cert type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/sxl463/.ssh/id_ecdsa type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/sxl463/.ssh/id_ecdsa-cert type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/sxl463/.ssh/id_ed25519 type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/sxl463/.ssh/id_ed25519-cert type -1
+debug1: Enabling compatibility mode for protocol 2.0
+debug1: Local version string SSH-2.0-OpenSSH_7.4
+debug1: Remote protocol version 2.0, remote software version OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.8
+debug1: match: OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.8 pat OpenSSH_6.6.1* compat 0x04000000
+debug1: Authenticating to 127.0.0.1:22 as 'sxl463'
+in wrappers.c, LINE 1312, strndup malloced pointer 0x560f27f7c170
+debug1: /home/sxl463/.ssh/known_hosts:8: parse error in hostkeys file
+debug1: /home/sxl463/.ssh/known_hosts:9: parse error in hostkeys file
+debug1: /home/sxl463/.ssh/known_hosts:10: parse error in hostkeys file
+debug1: /home/sxl463/.ssh/known_hosts:11: parse error in hostkeys file
+debug1: /home/sxl463/.ssh/known_hosts:12: parse error in hostkeys file
+debug1: /home/sxl463/.ssh/known_hosts:13: parse error in hostkeys file
+debug1: /home/sxl463/.ssh/known_hosts:14: parse error in hostkeys file
+debug1: /home/sxl463/.ssh/known_hosts:15: parse error in hostkeys file
+debug1: /home/sxl463/.ssh/known_hosts:16: parse error in hostkeys file
+debug1: /home/sxl463/.ssh/known_hosts:17: parse error in hostkeys file
+debug1: /home/sxl463/.ssh/known_hosts:18: parse error in hostkeys file
+debug1: /home/sxl463/.ssh/known_hosts:19: parse error in hostkeys file
+debug1: /home/sxl463/.ssh/known_hosts:20: parse error in hostkeys file
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug1: kex: algorithm: curve25519-sha256@libssh.org
+debug1: kex: host key algorithm: ecdsa-sha2-nistp256
+debug1: kex: server->client cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
+debug1: kex: client->server cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: Server host key: ecdsa-sha2-nistp256 SHA256:+C6/9WUbCLAWpBJECs4Q47meAp6bFsAisXnqSjtyNXc
+debug1: /home/sxl463/.ssh/known_hosts:8: parse error in hostkeys file
+debug1: /home/sxl463/.ssh/known_hosts:9: parse error in hostkeys file
+debug1: /home/sxl463/.ssh/known_hosts:10: parse error in hostkeys file
+debug1: /home/sxl463/.ssh/known_hosts:11: parse error in hostkeys file
+debug1: /home/sxl463/.ssh/known_hosts:12: parse error in hostkeys file
+debug1: /home/sxl463/.ssh/known_hosts:13: parse error in hostkeys file
+debug1: /home/sxl463/.ssh/known_hosts:14: parse error in hostkeys file
+debug1: /home/sxl463/.ssh/known_hosts:15: parse error in hostkeys file
+debug1: /home/sxl463/.ssh/known_hosts:16: parse error in hostkeys file
+debug1: /home/sxl463/.ssh/known_hosts:17: parse error in hostkeys file
+debug1: /home/sxl463/.ssh/known_hosts:18: parse error in hostkeys file
+debug1: /home/sxl463/.ssh/known_hosts:19: parse error in hostkeys file
+debug1: /home/sxl463/.ssh/known_hosts:20: parse error in hostkeys file
+The authenticity of host '127.0.0.1 (127.0.0.1)' can't be established.
+ECDSA key fingerprint is SHA256:+C6/9WUbCLAWpBJECs4Q47meAp6bFsAisXnqSjtyNXc.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '127.0.0.1' (ECDSA) to the list of known hosts.
+debug1: rekey after 134217728 blocks
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: expecting SSH2_MSG_NEWKEYS
+debug1: SSH2_MSG_NEWKEYS received
+debug1: rekey after 134217728 blocks
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug1: Authentications that can continue: password
+debug1: Next authentication method: password
+sxl463@127.0.0.1's password: 
+debug1: Authentication succeeded (password).
+Authenticated to 127.0.0.1 ([127.0.0.1]:22).
+debug1: channel 0: new [client-session]
+debug1: Requesting no-more-sessions@openssh.com
+debug1: Entering interactive session.
+debug1: pledge: network
+***
+ Time used for login: 0.033512
+
