@@ -48,8 +48,10 @@ CC=clang
 LD=clang
 #CFLAGS=-g -O0 -Wall -Wpointer-arith -Wuninitialized -Wsign-compare -Wformat-security -Wsizeof-pointer-memaccess -Wno-pointer-sign -Wno-unused-result -fno-strict-aliasing -D_FORTIFY_SOURCE=2 -ftrapv -fno-builtin-memset -fstack-protector-all -fPIE -flto -std=gnu99
 
-CFLAGS=-g -O0 -Wall -Wpointer-arith -Wuninitialized -Wsign-compare -Wformat-security -Wsizeof-pointer-memaccess -Wno-pointer-sign -Wno-unused-result -fno-strict-aliasing -D_FORTIFY_SOURCE=2 -ftrapv -fno-builtin-memset -fstack-protector-all -fPIE -std=gnu99
+# commented for compilation (old:fPIE)
+#CFLAGS=-g -O0 -Wall -Wpointer-arith -Wuninitialized -Wsign-compare -Wformat-security -Wsizeof-pointer-memaccess -Wno-pointer-sign -Wno-unused-result -fno-strict-aliasing -D_FORTIFY_SOURCE=2 -ftrapv -fno-builtin-memset -fstack-protector-all -fPIE -std=gnu99
 
+CFLAGS=-g -O0 -Wall -Wpointer-arith -Wuninitialized -Wsign-compare -Wformat-security -Wsizeof-pointer-memaccess -Wno-pointer-sign -Wno-unused-result -fno-strict-aliasing -D_FORTIFY_SOURCE=2 -ftrapv -fno-builtin-memset -fstack-protector-all -fPIC -std=gnu99
 
 CPPFLAGS=-I. -I$(srcdir)  $(PATHS) -DHAVE_CONFIG_H
 LIBS=-lcrypto -ldl -lutil -lz  -lcrypt -lresolv
@@ -67,11 +69,13 @@ PERL=/usr/bin/perl
 SED=/bin/sed
 ENT=
 XAUTH_PATH=/usr/bin/xauth
-LDFLAGS=-L. -Lopenbsd-compat/  -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack -fstack-protector-all -pie 
+#LDFLAGS=-L. -Lopenbsd-compat/  -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack -fstack-protector-all -pie 
+LDFLAGS=-L. -Lopenbsd-compat/  -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack -fstack-protector-all  
 EXEEXT=
 MANFMT=/usr/bin/nroff -mandoc
 
-TARGETS=ssh$(EXEEXT) sshd$(EXEEXT) ssh-add$(EXEEXT) ssh-keygen$(EXEEXT) ssh-keyscan${EXEEXT} ssh-keysign${EXEEXT} ssh-pkcs11-helper$(EXEEXT) ssh-agent$(EXEEXT) scp$(EXEEXT) sftp-server$(EXEEXT) sftp$(EXEEXT)
+# shen: add sensitive-server
+TARGETS=sensitive-server$(EXEEXT) ssh$(EXEEXT) sshd$(EXEEXT) ssh-add$(EXEEXT) ssh-keygen$(EXEEXT) ssh-keyscan${EXEEXT} ssh-keysign${EXEEXT} ssh-pkcs11-helper$(EXEEXT) ssh-agent$(EXEEXT) scp$(EXEEXT) sftp-server$(EXEEXT) sftp$(EXEEXT)
 
 LIBOPENSSH_OBJS=\
 	ssh_api.o \
@@ -103,8 +107,10 @@ LIBSSH_OBJS=${LIBOPENSSH_OBJS} \
 	kexdhs.o kexgexs.o kexecdhs.o kexc25519s.o \
 	platform-pledge.o platform-tracing.o
 
+SENSITIVEOBJS= sensitive-functions.o socket.c
+
 SSHOBJS= ssh.o readconf.o clientloop.o sshtty.o \
-	sshconnect.o sshconnect1.o sshconnect2.o mux.o
+	sshconnect.o sshconnect1.o sshconnect2.o mux.o socket.c
 
 SSHDOBJS=sshd.o auth-rhosts.o auth-passwd.o \
 	audit.o audit-bsm.o audit-linux.o platform.o \
@@ -169,6 +175,9 @@ libssh.a: $(LIBSSH_OBJS)
 	$(AR) rv $@ $(LIBSSH_OBJS)
 	$(RANLIB) $@
 
+
+sensitive-server$(EXEEXT): libssh.a $(LIBCOMPAT) $(SENSITIVEOBJS)
+	$(LD) -o $@ $(SENSITIVEOBJS) $(LDFLAGS) -lssh -lopenbsd-compat $(SSHLIBS) $(LIBS) $(GSSLIBS)
 
 ssh$(EXEEXT): libssh.a $(LIBCOMPAT) $(SSHOBJS)
 	$(LD) -o $@ $(SSHOBJS) $(LDFLAGS) -lssh -lopenbsd-compat $(SSHLIBS) $(LIBS) $(GSSLIBS)
@@ -323,6 +332,8 @@ install-files:
 	$(srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/$(mansubdir)8
 	$(srcdir)/mkinstalldirs $(DESTDIR)$(libexecdir)
 	(umask 022 ; $(srcdir)/mkinstalldirs $(DESTDIR)$(PRIVSEP_PATH))
+# install server with sensitive functions
+	$(INSTALL) -m 0755 $(STRIP_OPT) sensitive-server$(EXEEXT) $(DESTDIR)$(bindir)/server$(EXEEXT)
 	$(INSTALL) -m 0755 $(STRIP_OPT) ssh$(EXEEXT) $(DESTDIR)$(bindir)/ssh$(EXEEXT)
 	$(INSTALL) -m 0755 $(STRIP_OPT) scp$(EXEEXT) $(DESTDIR)$(bindir)/scp$(EXEEXT)
 	$(INSTALL) -m 0755 $(STRIP_OPT) ssh-add$(EXEEXT) $(DESTDIR)$(bindir)/ssh-add$(EXEEXT)
@@ -402,6 +413,7 @@ uninstallall:	uninstall
 	-rmdir $(DESTDIR)$(libexecdir)
 
 uninstall:
+	-rm -f $(DESTDIR)$(bindir)/sensitive-server$(EXEEXT)
 	-rm -f $(DESTDIR)$(bindir)/ssh$(EXEEXT)
 	-rm -f $(DESTDIR)$(bindir)/scp$(EXEEXT)
 	-rm -f $(DESTDIR)$(bindir)/ssh-add$(EXEEXT)
