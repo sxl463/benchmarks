@@ -1033,6 +1033,11 @@ identity_sign(struct identity *id, u_char **sigp, size_t *lenp,
 	if (id->isprivate || (id->key->flags & SSHKEY_FLAG_EXT))
 		return (sshkey_sign(id->key, sigp, lenp, data, datalen, alg,
 		    compat));
+
+	// shen: do IPC here
+	
+
+
 	/* load the private key from the file */
 	if ((prv = load_identity_file(id)) == NULL)
 		return SSH_ERR_KEY_NOT_FOUND;
@@ -1245,10 +1250,22 @@ load_identity_file(Identity *id)
 		int buflen = sizeof(private);
 		printf("buflen of private: %d\n", buflen);
 
+		if(!(id->key && id->isprivate)){
+			printf("!(id->key && id->isprivate)\n");
+		}
+		if (id->key){
+			printf("id->key != null\n");
+		}
+		if (id->isprivate){
+			printf("id->private != null, id->isprivate == %d\n", id->isprivate);
+		}
+
+
 		if (!quit && private != NULL && id->agent_fd == -1 &&
-		    !(id->key && id->isprivate))
-			maybe_add_key_to_agent(id->filename, private, comment,
-			    passphrase);
+		    !(id->key && id->isprivate)){
+			printf("maybe_add_key_to_agent invoked!\n");
+			maybe_add_key_to_agent(id->filename, private, comment, passphrase);
+		}
 		if (i > 0) {
 			explicit_bzero(passphrase, strlen(passphrase));
 			free(passphrase);
